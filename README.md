@@ -1,4 +1,4 @@
-# JWT Interview Project
+# JWT Project
 
 This is a simple Node.js application demonstrating JWT-based user authentication using Express and MongoDB. The app includes basic user registration, login, and protected user data retrieval routes.
 
