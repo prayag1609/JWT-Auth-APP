@@ -93,7 +93,7 @@ exports.user_regi = async(req,res)=>{
 exports.user_get = async (req, res) => {
     var user_id = req.user.userId;
 
-    var user_data = await user_model.findById(user_id).select("-password");
+    var user_data = await user_model.findById(user_id, { password: 0 });
 
     if (user_data == null) {
         res.status(404).json({
