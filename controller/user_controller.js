@@ -13,7 +13,6 @@ const nav = [{
 
 ////////////////////////
 // users home
-////////////////////////
 exports.user_home = async(req,res) =>{
     res.status(200).json({
         status:"welcome to JWT auth_app...",
@@ -22,8 +21,7 @@ exports.user_home = async(req,res) =>{
 }
 
 ////////////////////////
-// add users
-////////////////////////
+// add users and generate token
 exports.user_regi = async(req,res)=>{
     var name = req.body.name;
     var email = req.body.email;
@@ -89,7 +87,6 @@ exports.user_regi = async(req,res)=>{
 }
 ////////////////////////
 // get user by JWT token
-////////////////////////
 exports.user_get = async (req, res) => {
     var user_id = req.user.userId;
 
@@ -108,8 +105,7 @@ exports.user_get = async (req, res) => {
     }
 };
 ////////////////////////
-// get user by Id
-////////////////////////
+// get user by Id and token 
 exports.get_user_by_id = async (req, res) => {
     var user_id = req.params.user_id;  
 
@@ -134,8 +130,7 @@ exports.get_user_by_id = async (req, res) => {
     });  
 };
 ////////////////////////
-// get all users
-////////////////////////
+// get all users by token
 exports.get_all_user = async (req, res) => {
     var data = await user_model.find().select("-password");
 
@@ -145,8 +140,7 @@ exports.get_all_user = async (req, res) => {
     });
 }
 ////////////////////////
-// delete user by Id
-////////////////////////
+// delete user by Id and token
 exports.delete_user_by_id = async (req, res) => {
     var user_id = req.params.user_id;
 

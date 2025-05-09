@@ -9,7 +9,16 @@ var debug = require('debug')('jwt-interview:server');
 var http = require('http');
 
 var mongoose = require("mongoose")
-mongoose.connect('mongodb://localhost:27017/JWT_AUTH')
+async function connectDB() {
+  const conn = await mongoose.connect('mongodb://localhost:27017/JWT_AUTH');
+
+  if (conn) {
+      console.log("MongoDB connected...");
+  } else {
+      console.log("MongoDB not connected...");
+  }
+}
+connectDB();
 /**
  * Get port from environment and store in Express.
  */
