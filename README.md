@@ -65,8 +65,7 @@ The server will run on `http://localhost:3000` by default.
 ### Public Routes
 
 - `POST /user/regi` — Register a new user.
-- `POST /user/login` — Authenticate and receive a JWT.
-
+  
 ### Protected Routes
 
 - `GET /user/get` — Get all users (requires JWT).
